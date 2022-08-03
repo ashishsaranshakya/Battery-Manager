@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SettingsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/txt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="History Period"
+                    android:textSize="30dp" />
+
+                <SeekBar
+                    android:id="@+id/seekBarPeriod"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="-5dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toEndOf="@+id/txt4"
+                    android:max="6" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switch1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="170dp"
+                    android:text="Time"
+                    android:textColor="@color/grey"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:id="@+id/txtChoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Percent"
+                    android:textSize="30dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="Charge till"
+                    android:textSize="30dp" />
+
+                <EditText
+                    android:id="@+id/finalPercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="130dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_toEndOf="@+id/txt3"
+                    android:inputType="number"
+                    android:maxEms="3" />
+
+                <TextView
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignEnd="@+id/finalPercent"
+                    android:layout_marginEnd="0dp"
+                    android:text="%"
+                    android:layout_marginTop="10dp"
+                    android:textSize="25dp"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="Predict for"
+                    android:textSize="30dp" />
+
+                <EditText
+                    android:id="@+id/timePredict"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_toEndOf="@+id/txtTime"
+                    android:inputType="number"
+                    android:minEms="3" />
+
+                <TextView
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignEnd="@+id/timePredict"
+                    android:layout_marginEnd="0dp"
+                    android:text="m"
+                    android:layout_marginTop="10dp"
+                    android:textSize="25dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtSamplingRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="Sampling rate"
+                    android:textSize="30dp" />
+
+                <EditText
+                    android:id="@+id/samplingRate"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="90dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_toEndOf="@+id/txtSamplingRate"
+                    android:inputType="number"
+                    android:minEms="3" />
+
+                <TextView
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignEnd="@+id/samplingRate"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:text="s"
+                    android:layout_marginTop="10dp"
+                    android:textSize="25dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/txt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Graph window"
+                    android:textSize="30dp" />
+
+                <SeekBar
+                    android:id="@+id/seekBarWindow"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="-5dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toEndOf="@+id/txt5"
+                    android:max="5" />
+            </RelativeLayout>
+
+             <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                 <TextView
+                     android:id="@+id/txt"
+                     android:layout_width="wrap_content"
+                     android:layout_height="match_parent"
+                     android:text="Home graph\npreset"
+                     android:textSize="30dp"
+                     android:layout_marginTop="10dp"/>
+
+                 <LinearLayout
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_alignParentTop="true"
+                     android:layout_alignParentEnd="true"
+                     android:layout_alignParentBottom="true"
+                     android:layout_marginStart="5dp"
+                     android:layout_marginEnd="5dp"
+                     android:layout_toEndOf="@+id/txt"
+                     android:orientation="vertical">
+                     <CheckBox
+                         android:id="@+id/checkBattery"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Battery"
+                         android:textSize="25dp"/>
+                     <CheckBox
+                         android:id="@+id/checkRateOfChange"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Rate of change"
+                         android:textSize="25dp" />
+                     <CheckBox
+                         android:id="@+id/checkTemperature"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Temperature"
+                         android:textSize="25dp" />
+                     <CheckBox
+                         android:id="@+id/checkScreenStatus"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Screen Status"
+                         android:textSize="25dp" />
+
+
+                 </LinearLayout>
+
+
+             </RelativeLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
