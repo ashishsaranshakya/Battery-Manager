@@ -220,22 +220,11 @@ public class MainActivity extends LogActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), HistoryActivity.class));
-                /*TextView t=findViewById(R.id.txt2);
-                String str="";
-                ArrayList<HistoryEntry> a=helper.readHistory();
-                int x=a.size()-100;
-                if(x<0){
-                    x=0;
-                }
-                for(int i=x;i<a.size();i++){
-                    str=str+a.get(i)+"\n\n";
-                }
-                t.setText(str);*/
 
-                //helper.queryWriteable("UPDATE "+ TABLE_SETTINGS+" SET "+KEY_SETTING_DATA+"="+4500+
-                //        " WHERE "+KEY_SETTING+"=\""+SettingsConstants.ACTUAL_BATTERY+"\"");
-                //helper.queryWriteable("UPDATE "+ TABLE_SETTINGS+" SET "+KEY_SETTING_DATA+"="+10+
-                //        " WHERE "+KEY_SETTING+"=\""+SettingsConstants.NO_OF_ENTRIES+"\"");
+                /*helper.queryWriteable("UPDATE "+ TABLE_SETTINGS+" SET "+KEY_SETTING_DATA+"="+4500+
+                        " WHERE "+KEY_SETTING+"=\""+SettingsConstants.ACTUAL_BATTERY+"\"");
+                helper.queryWriteable("UPDATE "+ TABLE_SETTINGS+" SET "+KEY_SETTING_DATA+"="+10+
+                        " WHERE "+KEY_SETTING+"=\""+SettingsConstants.NO_OF_ENTRIES+"\"");*/
             }
         });
 
@@ -243,8 +232,14 @@ public class MainActivity extends LogActivity {
             @Override
             public void onClick(View v) {
                 //showStats();
-                //startService(new Intent(MainActivity.this, AggregatingService.class));
                 startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+            }
+        });
+
+        findViewById(R.id.btn4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                helper.refreshTable(BatteryManagerDBHelper.TABLE_HISTORY);
             }
         });
     }
