@@ -55,6 +55,12 @@
                 android:layout_height="wrap_content"
                 android:text="Service" />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn4"
+                android:text="Refresh history Database"/>
+
 
         </LinearLayout>
     </ScrollView>
