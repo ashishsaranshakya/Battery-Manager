@@ -24,8 +24,7 @@ public class HistoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_history);
         initView();
         setData();
-        BatteryManagerDBHelper helper=new BatteryManagerDBHelper(this);
-        //arrayList=helper.readHistory();
+
         HistoryRecyclerViewAdapter adapter=new HistoryRecyclerViewAdapter();
         adapter.setArrayList(arrayList);
         recyclerView.setAdapter(adapter);
@@ -38,7 +37,9 @@ public class HistoryActivity extends AppCompatActivity {
     }
 
     void setData(){
-        arrayList=new ArrayList<>();
+        BatteryManagerDBHelper helper=new BatteryManagerDBHelper(this);
+        arrayList=helper.readHistory();
+        /*arrayList=new ArrayList<>();
         arrayList.add(new HistoryEntry("Changing 1","40%-80%","9 watts","4:56pm","40%"));
         arrayList.add(new HistoryEntry("Changing 2","40%-10%","18 watts","4:36pm","30%"));
         arrayList.add(new HistoryEntry("Changing 3","10%-80%","13 watts","4:16pm","50%"));
@@ -48,6 +49,6 @@ public class HistoryActivity extends AppCompatActivity {
         arrayList.add(new HistoryEntry("Changing 7","80%-60%","4 watts","4:26pm","24%"));
         arrayList.add(new HistoryEntry("Changing 8","60%-80%","14 watts","3:52pm","47%"));
         arrayList.add(new HistoryEntry("Changing 9","80%-10%","4 watts","4:26pm","24%"));
-        arrayList.add(new HistoryEntry("Changing 10","10%-80%","12 watts","3:56pm","47%"));
+        arrayList.add(new HistoryEntry("Changing 10","10%-80%","12 watts","3:56pm","47%"));*/
     }
 }
