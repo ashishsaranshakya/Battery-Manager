@@ -67,10 +67,13 @@ public class MainActivity extends LogActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             Log.w(TAG,"Inside main receiver");
-            seriesBattery.appendData(new DataPoint(intent.getLongExtra(BatteryService.EXTRA_DATE,0),intent.getIntExtra(BatteryService.EXTRA_BATTERY,0)),false,count+1);
-            graph.getViewport().setMaxX(intent.getLongExtra(BatteryService.EXTRA_DATE,-1));
-            arrayList.add(new BatteryEntry(intent.getLongExtra(BatteryService.EXTRA_DATE,0),intent.getIntExtra(BatteryService.EXTRA_BATTERY,0),intent.getLongExtra(BatteryService.EXTRA_CHANGE,0),intent.getFloatExtra(BatteryService.EXTRA_TEMPERATURE,0),intent.getLongExtra(BatteryService.EXTRA_CURRENT,0)));
-            count++;
+            try {
+                seriesBattery.appendData(new DataPoint(intent.getLongExtra(BatteryService.EXTRA_DATE, 0), intent.getIntExtra(BatteryService.EXTRA_BATTERY, 0)), false, count + 1);
+                graph.getViewport().setMaxX(intent.getLongExtra(BatteryService.EXTRA_DATE, -1));
+                arrayList.add(new BatteryEntry(intent.getLongExtra(BatteryService.EXTRA_DATE, 0), intent.getIntExtra(BatteryService.EXTRA_BATTERY, 0), intent.getLongExtra(BatteryService.EXTRA_CHANGE, 0), intent.getFloatExtra(BatteryService.EXTRA_TEMPERATURE, 0), intent.getLongExtra(BatteryService.EXTRA_CURRENT, 0)));
+                count++;
+            }
+            catch (Exception e){}
         }
     };
 
