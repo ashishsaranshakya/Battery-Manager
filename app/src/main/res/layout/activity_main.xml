@@ -53,7 +53,7 @@
                 android:id="@+id/btnService"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Service" />
+                android:text="Tabbed view" />
 
             <Button
                 android:layout_width="wrap_content"

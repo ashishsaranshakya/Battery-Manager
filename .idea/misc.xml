@@ -12,12 +12,13 @@
         <entry key="..\:/Users/harsh/AndroidStudioProjects/BatteryManager/app/src/main/res/drawable/ic_temperature_foreground.xml" value="0.1805" />
         <entry key="..\:/Users/harsh/AndroidStudioProjects/BatteryManager/app/src/main/res/layout-land/activity_main.xml" value="0.2868747327917914" />
         <entry key="..\:/Users/harsh/AndroidStudioProjects/BatteryManager/app/src/main/res/layout/activity_history.xml" value="0.28615384615384615" />
-        <entry key="..\:/Users/harsh/AndroidStudioProjects/BatteryManager/app/src/main/res/layout/activity_main.xml" value="0.2765625" />
+        <entry key="..\:/Users/harsh/AndroidStudioProjects/BatteryManager/app/src/main/res/layout/activity_main.xml" value="0.23554242296327565" />
         <entry key="..\:/Users/harsh/AndroidStudioProjects/BatteryManager/app/src/main/res/layout/activity_main2.xml" value="0.25" />
         <entry key="..\:/Users/harsh/AndroidStudioProjects/BatteryManager/app/src/main/res/layout/fragment_battery.xml" value="0.23856348867037194" />
         <entry key="..\:/Users/harsh/AndroidStudioProjects/BatteryManager/app/src/main/res/layout/fragment_home.xml" value="0.23856348867037194" />
         <entry key="..\:/Users/harsh/AndroidStudioProjects/BatteryManager/app/src/main/res/layout/fragment_rate_of_change.xml" value="0.23856348867037194" />
         <entry key="..\:/Users/harsh/AndroidStudioProjects/BatteryManager/app/src/main/res/layout/fragment_temperature.xml" value="0.1" />
+        <entry key="..\:/Users/harsh/AndroidStudioProjects/BatteryManager/app/src/main/res/layout/history_view.xml" value="0.1" />
         <entry key="..\:/Users/harsh/AndroidStudioProjects/BatteryManager/app/src/main/res/menu/bottom_nav_menu.xml" value="0.23856348867037194" />
         <entry key="..\:/Users/harsh/AndroidStudioProjects/BatteryManager/app/src/main/res/menu/menu_main.xml" value="0.290625" />
       </map>
