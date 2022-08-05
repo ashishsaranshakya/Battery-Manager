@@ -202,9 +202,9 @@ public class BatteryManagerDBHelper extends SQLiteOpenHelper {
         return arrayList;
     }
 
-    public Cursor queryReadable(String st){
+    public Cursor queryReadable(String sql){
         SQLiteDatabase db=this.getReadableDatabase();
-        Cursor c=db.rawQuery(st,new String[]{});
+        Cursor c=db.rawQuery(sql,new String[]{});
         return c;
     }
 
