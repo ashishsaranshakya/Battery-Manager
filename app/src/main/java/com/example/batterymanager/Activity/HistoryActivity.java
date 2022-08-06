@@ -25,7 +25,7 @@ public class HistoryActivity extends AppCompatActivity {
         initView();
         setData();
 
-        HistoryRecyclerViewAdapter adapter=new HistoryRecyclerViewAdapter();
+        HistoryRecyclerViewAdapter adapter=new HistoryRecyclerViewAdapter(this);
         adapter.setArrayList(arrayList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

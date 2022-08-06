@@ -1,6 +1,9 @@
 package com.example.batterymanager;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.graphics.Color;
+import android.view.ContentInfo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +17,15 @@ import java.util.ArrayList;
 
 public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecyclerViewAdapter.ViewHolder> {
     private ArrayList<HistoryEntry> arrayList=new ArrayList<>();
+    Context context;
 
     public void setArrayList(ArrayList<HistoryEntry> arrayList) {
         this.arrayList = arrayList;
         notifyDataSetChanged();
     }
 
-    public HistoryRecyclerViewAdapter() {
+    public HistoryRecyclerViewAdapter(Context context) {
+        this.context=context;
     }
 
     @NonNull
@@ -40,8 +45,9 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
         int initialRange=Integer.parseInt(interval.split("%")[0]);
         int finalRange=Integer.parseInt(interval.split("%")[1].substring(1));
         holder.changeInterval.setText(arrayList.get(position).getChangeInterval());
-        if (initialRange>finalRange) holder.change.setTextColor(Color.RED);
-        else holder.change.setTextColor(Color.GREEN);
+        if (initialRange>finalRange) holder.change.setTextColor(context.getResources().getColor(R.color.red));
+        else holder.change.setTextColor(context.getResources().getColor(R.color.green));
+        holder.changeInterval.setTextColor(context.getResources().getColor(R.color.dgrey));
         holder.screenOn_avgWattage.setText(arrayList.get(position).getScreenOn_avgWattage());
         holder.change.setText(arrayList.get(position).getChange());
         holder.time.setText(arrayList.get(position).getTime());
