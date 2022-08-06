@@ -1,6 +1,7 @@
 package com.example.batterymanager.Activity.Navigation;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.batterymanager.R;
 
 import android.os.Bundle;
 
