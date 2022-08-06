@@ -4,4 +4,5 @@
     <string name="title_home">Home</string>
     <string name="title_rate_of_change">Rate of Change</string>
     <string name="title_temperature">Temperature</string>
+    <string name="title_history">History</string>
 </resources>

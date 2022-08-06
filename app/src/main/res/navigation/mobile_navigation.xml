@@ -22,4 +22,10 @@
         android:name="com.example.batterymanager.Activity.Navigation.temperature.TemperatureFragment"
         android:label="@string/title_temperature"
         tools:layout="@layout/fragment_temperature" />
+
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.example.batterymanager.Activity.Navigation.history.HistoryFragment"
+        android:label="@string/title_history"
+        tools:layout="@layout/fragment_history"/>
 </navigation>
