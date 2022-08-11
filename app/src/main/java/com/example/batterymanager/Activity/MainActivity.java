@@ -120,7 +120,7 @@ public class MainActivity extends LogActivity {
                 else{
                     return super.formatLabel(value,isValueX);
                 }
-            };
+            }
         });
         seriesBattery.setOnDataPointTapListener(new OnDataPointTapListener() {
             @Override
@@ -239,7 +239,7 @@ public class MainActivity extends LogActivity {
         findViewById(R.id.btn4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                helper.refreshTable(BatteryManagerDBHelper.TABLE_MAIN);
+                helper.refreshTable(BatteryManagerDBHelper.TABLE_HISTORY);
             }
         });
     }

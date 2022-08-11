@@ -28,7 +28,10 @@ public class HistoryActivity extends AppCompatActivity {
         HistoryRecyclerViewAdapter adapter=new HistoryRecyclerViewAdapter(this);
         adapter.setArrayList(arrayList);
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
     }
 
     void initView() {
