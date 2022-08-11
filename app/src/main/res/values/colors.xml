@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#B8B8B8</color>
     <color name="dgrey">#85000000</color>
-    <color name="foreground">#19AAAAAA</color>
+    <color name="background">#121212</color>
     <color name="red">#F44236</color>
     <color name="green">#4FAE53</color>
 </resources>

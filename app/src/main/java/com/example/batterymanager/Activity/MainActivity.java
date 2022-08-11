@@ -239,7 +239,7 @@ public class MainActivity extends LogActivity {
         findViewById(R.id.btn4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                helper.refreshTable(BatteryManagerDBHelper.TABLE_HISTORY);
+                helper.refreshTable(BatteryManagerDBHelper.TABLE_MAIN);
             }
         });
     }
@@ -287,7 +287,7 @@ public class MainActivity extends LogActivity {
             txt.append((int)(var/86400000L)+"d "+(int)(var%86400000L)/3600000L+"h "+(int)(var%86400000L)%3600000L/60000L+"m\n\n");
         }else {
             BatteryManager manager=(BatteryManager)getSystemService(BATTERY_SERVICE);
-            helper.addBatteryEntry(Calendar.getInstance().getTime().getTime(),manager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY),0,32f,getCurrent(this));
+            helper.addBatteryEntry(Calendar.getInstance().getTime().getTime(),manager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY),0,32f,0);
             count++;
             arrayList=helper.readAll();
             seriesBattery.appendData(new DataPoint(new Date(arrayList.get(0).getDate()), arrayList.get(0).getBattery()), false, count);
