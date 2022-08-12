@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.batterymanager">
+    package="com.ashish.batterymanager">
 
     <uses-permission
         android:name="android.permission.PACKAGE_USAGE_STATS"
@@ -15,38 +15,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BatteryManager">
         <activity
-            android:name=".Activity.SessionActivity"
+            android:name="com.ashish.batterymanager.Activity.SessionActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.MainActivity2"
+            android:name="com.ashish.batterymanager.Activity.MainActivity2"
             android:exported="false"
             android:label="@string/title_activity_main2" />
         <activity
-            android:name=".Activity.HistoryActivity"
+            android:name="com.ashish.batterymanager.Activity.HistoryActivity"
             android:exported="false" />
 
         <service
-            android:name=".Service.AggregatingService"
+            android:name="com.ashish.batterymanager.Service.AggregatingService"
             android:enabled="true"
             android:exported="false" />
 
         <activity
-            android:name=".Activity.SettingsActivity"
+            android:name="com.ashish.batterymanager.Activity.SettingsActivity"
             android:exported="false" />
 
         <service
-            android:name=".Service.BatteryService"
+            android:name="com.ashish.batterymanager.Service.BatteryService"
             android:enabled="true"
             android:exported="false" />
 
         <activity
-            android:name=".Activity.ChangeActivity"
+            android:name="com.ashish.batterymanager.Activity.ChangeActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.TempActivity"
+            android:name="com.ashish.batterymanager.Activity.TempActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.MainActivity"
+            android:name="com.ashish.batterymanager.Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
