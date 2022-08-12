@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BatteryManager">
         <activity
-            android:name=".SessionActivity"
+            android:name=".Activity.SessionActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.MainActivity2"
