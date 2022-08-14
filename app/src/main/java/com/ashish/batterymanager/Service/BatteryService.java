@@ -202,7 +202,7 @@ public class BatteryService extends Service {
 
                                 NotificationCompat.Builder popUpBuilder = new NotificationCompat.Builder(context, "Pop up")
                                         .setSmallIcon(R.drawable.ic_batterymanager)
-                                        .setContentTitle("Battery charged!")
+                                        .setContentTitle("Battery charged !")
                                         .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                                         .setFullScreenIntent(fullScreenPendingIntent, true);
                                 Notification notification=popUpBuilder.build();
