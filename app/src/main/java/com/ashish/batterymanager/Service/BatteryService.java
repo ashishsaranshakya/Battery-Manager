@@ -14,6 +14,7 @@ import static com.ashish.batterymanager.NotificationChannelUtils.*;
 import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.app.usage.UsageEvents;
 import android.app.usage.UsageStatsManager;
@@ -30,6 +31,7 @@ import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 
+import com.ashish.batterymanager.Activity.MainActivity;
 import com.ashish.batterymanager.BatteryEntry;
 import com.ashish.batterymanager.HistoryEntry;
 import com.ashish.batterymanager.Provider.BatteryManagerDBHelper;
@@ -114,6 +116,7 @@ public class BatteryService extends Service {
                     if (charging) {
                         if (RateChange < 1) {
                             charging = !charging;
+
                             NotificationCompat.Builder builder=new NotificationCompat.Builder(BatteryService.this,"General");
                             builder.setSmallIcon(R.drawable.ic_batterymanager);
                             builder.setContentTitle("Discharging");
@@ -126,6 +129,7 @@ public class BatteryService extends Service {
                             addHistoryCharged();
                             lastBatteryForHistory=last_battery;
                             break;
+
                         }
                     } else {
                         if (RateChange > 0) {
@@ -190,6 +194,20 @@ public class BatteryService extends Service {
                         long extra=(RateChange + getAvgChangePositive(RateChange)) / 2;
                         if (Integer.parseInt(helper.getDataFromSettings(SettingsConstants.FINAL_PERCENT))<=battery){
                             builder.setContentTitle(mode);
+
+                            if (Integer.parseInt(helper.getDataFromSettings(SettingsConstants.FINAL_PERCENT))==battery || battery==100){
+                                Intent fullScreenIntent = new Intent(context, MainActivity.class);
+                                PendingIntent fullScreenPendingIntent = PendingIntent.getActivity(context, 0,
+                                        fullScreenIntent, PendingIntent.FLAG_IMMUTABLE);
+
+                                NotificationCompat.Builder popUpBuilder = new NotificationCompat.Builder(context, "Pop up")
+                                        .setSmallIcon(R.drawable.ic_batterymanager)
+                                        .setContentTitle("Battery charged!")
+                                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                                        .setFullScreenIntent(fullScreenPendingIntent, true);
+                                Notification notification=popUpBuilder.build();
+                                ((NotificationManager)getSystemService(NOTIFICATION_SERVICE)).notify(BATTERY_CHARGED,notification);
+                            }
                         }
                         else {
 
