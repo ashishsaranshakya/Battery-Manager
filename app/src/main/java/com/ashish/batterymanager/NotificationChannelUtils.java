@@ -10,8 +10,13 @@ public class NotificationChannelUtils {
         NotificationChannel channel=new NotificationChannel("General","General", NotificationManager.IMPORTANCE_DEFAULT);
         channel.setDescription(desc);
         context.getSystemService(NotificationManager.class).createNotificationChannel(channel);
+
+        desc="Special notifications";
+        channel=new NotificationChannel("Pop up","Pop up", NotificationManager.IMPORTANCE_HIGH);
+        channel.setDescription(desc);
+        context.getSystemService(NotificationManager.class).createNotificationChannel(channel);
     }
     public static final int BATTERY_STATUS=0;
     public static final int BATTERY_LEVEL_TESTING=1;
-    public static final int SCREEN_STATUS=2;
+    public static final int BATTERY_CHARGED=2;
 }
