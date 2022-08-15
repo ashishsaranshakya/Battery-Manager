@@ -271,7 +271,7 @@ public class MainActivity extends LogActivity {
     public void setHistory(){
         arrayList=helper.readAll();
         count=arrayList.size();
-        if (count>1) {
+        if (count!=0) {
             for (int i = 0; i < count; i++) {
                 seriesBattery.appendData(new DataPoint(new Date(arrayList.get(i).getDate()), arrayList.get(i).getBattery()), false, count);
                 if (arrayList.get(i).getChange()<71) seriesChange.appendData(new DataPoint(new Date(arrayList.get(i).getDate()), arrayList.get(i).getChange()), false, count);

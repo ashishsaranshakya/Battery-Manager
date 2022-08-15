@@ -107,7 +107,7 @@ public class BatteryService extends Service {
                 initial_date =dt.getTime();
                 count++;
             }
-            if (last_battery != battery){
+            if (last_battery != battery && battery!=helper.readAll().get(helper.readAll().size()-1).getBattery()){
                 for(int i=0;i<1;i++) {
                     if (last_date==dt.getTime()){
                         break;
@@ -290,7 +290,7 @@ public class BatteryService extends Service {
     public void initVariables(){
         helper=new BatteryManagerDBHelper(this);
         count = helper.readAll().size();
-        if(count!=0){
+        if(helper.readAll().size()!=0){
             last_battery = helper.readAll().get(helper.readAll().size()-1).getBattery();
             last_date=helper.readAll().get(helper.readAll().size()-1).getDate();
             initial_date =helper.readAll().get(0).getDate();
