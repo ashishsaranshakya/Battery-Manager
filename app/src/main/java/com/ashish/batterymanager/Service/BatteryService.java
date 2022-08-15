@@ -428,6 +428,7 @@ public class BatteryService extends Service {
     }
 
     void addHistoryCharged(){
+        if (last_battery<=lastBatteryForHistory) return;
         Cursor cursor=helper.queryReadable("SELECT MAX("+KEY_DATE+") FROM "+TABLE_MAIN+" WHERE "+KEY_BATTERY+"="+lastBatteryForHistory+";");
         long initialDate=0;
         ;
@@ -473,6 +474,8 @@ public class BatteryService extends Service {
     }
 
     void addHistoryDischarged(){
+        if (last_battery>=lastBatteryForHistory) return;
+
         Cursor cursor=helper.queryReadable("SELECT MAX("+KEY_DATE+") FROM "+TABLE_MAIN+" WHERE "+KEY_BATTERY+"="+lastBatteryForHistory+";");
         long initialDate=0;
         if(cursor.moveToFirst()){
