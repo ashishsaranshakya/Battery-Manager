@@ -71,7 +71,7 @@ public class MainActivity extends LogActivity {
                 arrayList.add(new BatteryEntry(intent.getLongExtra(BatteryService.EXTRA_DATE, 0), intent.getIntExtra(BatteryService.EXTRA_BATTERY, 0), intent.getLongExtra(BatteryService.EXTRA_CHANGE, 0), intent.getFloatExtra(BatteryService.EXTRA_TEMPERATURE, 0), intent.getLongExtra(BatteryService.EXTRA_CURRENT, 0)));
                 count++;
             }
-            catch (Exception e){}
+            catch (Exception ignored){}
         }
     };
 
@@ -302,7 +302,10 @@ public class MainActivity extends LogActivity {
             long date=iterator.next();
             int k=20;
             if(hashMap.get(date)) k=40;
-            seriesScreenStatus.appendData(new DataPoint(new Date(date),k),false,countScreenSample);
+            try {
+                seriesScreenStatus.appendData(new DataPoint(new Date(date), k), false, countScreenSample);
+            }
+            catch (IllegalArgumentException ignored){}
         }
     }
 
