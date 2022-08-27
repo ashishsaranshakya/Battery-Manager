@@ -624,24 +624,5 @@ public class BatteryService extends Service {
         ((NotificationManager)getSystemService(NOTIFICATION_SERVICE)).notify(BATTERY_STATUS,notification);
     }
 
-    /*void postAlarmingNotification(String str){
-        AlarmManager alarmMgr;
-        PendingIntent alarmIntent;
-
-        alarmMgr = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlarmReceiver.class);
-        alarmIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
-
-// Set the alarm to start at 8:30 a.m.
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(System.currentTimeMillis());
-        calendar.set(Calendar.HOUR_OF_DAY, 8);
-        calendar.set(Calendar.MINUTE, 30);
-
-// setRepeating() lets you specify a precise custom interval--in this case,
-// 20 minutes.
-        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                1000 * 60 * 20, alarmIntent);
-    }*/
 
 }
