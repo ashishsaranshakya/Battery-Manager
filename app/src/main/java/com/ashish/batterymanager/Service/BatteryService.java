@@ -431,7 +431,6 @@ public class BatteryService extends Service {
         if (last_battery<=lastBatteryForHistory) return;
         Cursor cursor=helper.queryReadable("SELECT MAX("+KEY_DATE+") FROM "+TABLE_MAIN+" WHERE "+KEY_BATTERY+"="+lastBatteryForHistory+";");
         long initialDate=0;
-        ;
         if(cursor.moveToFirst()){
             try{
                 initialDate= Long.parseLong(cursor.getString(0));
@@ -483,7 +482,6 @@ public class BatteryService extends Service {
         }
         cursor.close();
 
-        //long diff=(new Date().getTime()-initialDate)/(60000);
         long diff=(last_date-initialDate)/(60000);
         String status="Used for ";
         if (diff>=60) status=status+(int)(diff/60)+"h "+(int)(diff%60)+"m";
@@ -491,11 +489,16 @@ public class BatteryService extends Service {
 
         String changeInterval=lastBatteryForHistory+"%-"+last_battery+"%";
 
-        //int screenOn=getUsageStatistics(initialDate,new Date().getTime());
         int screenOn=getUsageStatistics(initialDate,last_date);
-        String screenOn_avgWattage="";
-        if ((screenOn/60)>0) screenOn_avgWattage="Screen on for: "+ (screenOn/60) + "h " + (screenOn%60)+"m";//TODO Screen on time TBA;
-        else screenOn_avgWattage="Screen on for: " + screenOn+"m";
+        String screenOn_avgWattage;
+        if (screenOn>diff/60000){
+            if ((screenOn/60)>=0) screenOn_avgWattage="Screen on for: "+ (screenOn/60) + "h " + (screenOn%60)+"m";
+            else screenOn_avgWattage="Screen on for: " + screenOn+"m";
+        }
+        else{
+            if (diff>=60) screenOn_avgWattage="Screen on for: "+(int)(diff/60)+"h "+(int)(diff%60)+"m";
+            else screenOn_avgWattage="Screen on for: "+(int)(diff)+"m";
+        }
 
         //String dateTime=new Date().toString();
         String dateTime=new Date(last_date).toString();
@@ -538,7 +541,7 @@ public class BatteryService extends Service {
                     String key = currentEvent.getPackageName();
                     if (map.get(key) == null) {
                         map.put(key, new AppUsageInfo(key));
-                        sameEvents.put(key,new ArrayList<UsageEvents.Event>());
+                        sameEvents.put(key,new ArrayList<>());
                     }
                     sameEvents.get(key).add(currentEvent);
                 }
