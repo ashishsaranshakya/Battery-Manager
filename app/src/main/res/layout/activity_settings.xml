@@ -23,7 +23,7 @@
             android:orientation="vertical"
             android:layout_marginTop="10dp">
 
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_margin="10dp">
@@ -32,24 +32,22 @@
                     android:id="@+id/txt4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="History Period"
-                    android:textSize="22sp" />
+                    android:text="@string/setting_history_period"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <SeekBar
                     android:id="@+id/seekBarPeriod"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="19dp"
-                    android:layout_marginTop="-5dp"
-                    android:layout_marginEnd="18dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_toEndOf="@+id/txt4"
-                    android:max="6" />
-            </RelativeLayout>
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:max="6"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -71,7 +69,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginEnd="170dp"
-                    android:text="Time"
+                    android:text="@string/setting_timePercent_time"
                     android:textColor="@color/grey"
                     android:textSize="22sp" />
 
@@ -84,7 +82,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="20dp"
-                    android:text="Percent"
+                    android:text="@string/setting_timePercent_percent"
                     android:textSize="22sp" />
             </RelativeLayout>
 
@@ -103,7 +101,7 @@
                     android:id="@+id/txt3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Charge till"
+                    android:text="@string/setting_chargeTill"
                     android:textSize="22sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -118,13 +116,14 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginEnd="30dp"/>
+                    android:layout_marginEnd="30dp"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/text3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="%"
+                    android:text="@string/setting_changeTime_end"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -149,7 +148,7 @@
                     android:id="@+id/txtTime"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Predict for"
+                    android:text="@string/setting_predictFor"
                     android:textSize="22sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -164,13 +163,14 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginEnd="30dp"/>
+                    android:layout_marginEnd="30dp"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/text4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="m"
+                    android:text="@string/setting_predictFor_end"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -194,7 +194,7 @@
                     android:id="@+id/txtSamplingRate"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Sampling rate"
+                    android:text="@string/setting_samplingRate"
                     android:textSize="22sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -209,13 +209,14 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginEnd="30dp"/>
+                    android:layout_marginEnd="30dp"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="s"
+                    android:text="@string/setting_samplingRate_end"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -225,42 +226,49 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
+                android:id="@+id/view"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/grey"/>
+                android:background="@color/grey" />
 
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_margin="10dp">
+                android:layout_margin="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteY="307dp">
 
                 <TextView
                     android:id="@+id/txt5"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Graph window"
-                    android:textSize="22sp" />
+                    android:text="@string/setting_graphWindow"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <SeekBar
                     android:id="@+id/seekBarWindow"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="19dp"
-                    android:layout_marginTop="-5dp"
-                    android:layout_marginEnd="18dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_toEndOf="@+id/txt5"
-                    android:max="5" />
-            </RelativeLayout>
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:max="5"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
+                android:id="@+id/view2"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/grey"/>
+                android:background="@color/grey" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -273,7 +281,7 @@
                      android:layout_height="match_parent"
                      android:layout_alignParentStart="true"
                      android:layout_alignParentTop="true"
-                     android:text="Home graph\npreset"
+                     android:text="@string/setting_homeGraphPreset"
                      android:textSize="22sp"
                      android:layout_marginTop="10dp"/>
 
@@ -291,25 +299,25 @@
                          android:id="@+id/checkBattery"
                          android:layout_width="match_parent"
                          android:layout_height="wrap_content"
-                         android:text="Battery"
+                         android:text="@string/setting_homeGraphPreset_battery"
                          android:textSize="22sp"/>
                      <CheckBox
                          android:id="@+id/checkRateOfChange"
                          android:layout_width="match_parent"
                          android:layout_height="wrap_content"
-                         android:text="Rate of change"
+                         android:text="@string/setting_homeGraphPreset_rateOfChange"
                          android:textSize="22sp" />
                      <CheckBox
                          android:id="@+id/checkTemperature"
                          android:layout_width="match_parent"
                          android:layout_height="wrap_content"
-                         android:text="Temperature"
+                         android:text="@string/setting_homeGraphPreset_temperature"
                          android:textSize="22sp" />
                      <CheckBox
                          android:id="@+id/checkScreenStatus"
                          android:layout_width="match_parent"
                          android:layout_height="wrap_content"
-                         android:text="Screen Status"
+                         android:text="@string/setting_homeGraphPreset_screenStatus"
                          android:textSize="22sp" />
 
 
@@ -329,16 +337,26 @@
                 android:layout_margin="10dp"
                 android:orientation="horizontal">
 
-                <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:id="@+id/switch3"
+                <TextView
+                    android:id="@+id/txtChoice3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentBottom="true"
-                    android:text="Temperature"
-                    android:textColor="@color/grey"
+                    android:text="@string/setting_temperatureRateOfChange_temperature"
                     android:textSize="22sp" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switch3"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@+id/txtChoice2"
+                    android:layout_toEndOf="@+id/txtChoice3"
+                    android:textSize="22sp"
+                    app:showText="false" />
 
                 <TextView
                     android:id="@+id/txtChoice2"
@@ -347,9 +365,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="5dp"
-                    android:text="Rate of Change"
+                    android:text="@string/setting_temperatureRateOfChange_rateOfChange"
                     android:textSize="22sp" />
             </RelativeLayout>
 

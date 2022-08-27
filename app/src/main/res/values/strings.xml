@@ -5,4 +5,21 @@
     <string name="title_rate_of_change">Rate of Change</string>
     <string name="title_temperature">Temperature</string>
     <string name="title_history">History</string>
+    <string name="setting_history_period">History Period</string>
+    <string name="setting_timePercent_time">Time</string>
+    <string name="setting_timePercent_percent">Percent</string>
+    <string name="setting_chargeTill">Charge till</string>
+    <string name="setting_changeTime_end">%</string>
+    <string name="setting_predictFor">Predict for</string>
+    <string name="setting_predictFor_end">m</string>
+    <string name="setting_samplingRate">Sampling rate</string>
+    <string name="setting_samplingRate_end">s</string>
+    <string name="setting_graphWindow">Graph window</string>
+    <string name="setting_homeGraphPreset">Home graph\npreset</string>
+    <string name="setting_homeGraphPreset_battery">Battery</string>
+    <string name="setting_homeGraphPreset_rateOfChange">Rate of change</string>
+    <string name="setting_homeGraphPreset_temperature">Temperature</string>
+    <string name="setting_homeGraphPreset_screenStatus">Screen Status</string>
+    <string name="setting_temperatureRateOfChange_temperature">Temperature</string>
+    <string name="setting_temperatureRateOfChange_rateOfChange">Rate of Change</string>
 </resources>
